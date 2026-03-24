@@ -17,8 +17,8 @@ The project is structured around the **CQRS** pattern:
 
 
 
-## Getting Started
-
-1. **Clone the repo:**
-   ```bash
-   git clone [https://github.com/your-username/CleanAuth-CQRS-StarterKit.git](https://github.com/your-username/CleanAuth-CQRS-StarterKit.git)
+🛠 Setup & Installation
+Clone the repository.
+Update the connection string in appsettings.json.
+Run dotnet ef database update.
+Press F5 to start the project.
