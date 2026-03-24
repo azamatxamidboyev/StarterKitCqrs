@@ -1,0 +1,25 @@
+﻿using Infrastructure.Db;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Infrastructure
+{
+    public static class InfrastructureServiceRegistration
+    {
+        public static IServiceCollection AddInfrastructureServices(this IServiceCollection services, IConfiguration configuration)
+        {
+            services.AddDbContext<AppDbContext>(options =>
+                 options.UseNpgsql(configuration.GetConnectionString("ConnectionString"),
+                 npgsqlOptions => npgsqlOptions.EnableRetryOnFailure(maxRetryCount: 5,
+                 maxRetryDelay: TimeSpan.FromSeconds(10), errorCodesToAdd: null)));
+
+            return services;
+        }
+    }
+}
