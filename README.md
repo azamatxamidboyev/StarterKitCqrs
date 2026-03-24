@@ -18,7 +18,7 @@ The project is structured around the **CQRS** pattern:
 
 
 🛠 Setup & Installation
-Clone the repository.
-Update the connection string in appsettings.json.
-Run dotnet ef database update.
-Press F5 to start the project.
+* Clone the repository.
+* Update the connection string in appsettings.json.
+* Run dotnet ef database update.
+* Press F5 to start the project.
